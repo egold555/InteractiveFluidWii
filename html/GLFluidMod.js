@@ -1466,42 +1466,42 @@
             return v;
         },
         lowerQualityRequired: function (magnitude) {
-            if (this.qualityDirection > 0) return;
-            this.qualityDirection = -1;
-            var qualityIndex = this.simulationQuality[1];
-            var maxIndex = Type.allEnums(SimulationQuality).length - 1;
-            if (qualityIndex >= maxIndex) return;
-            if (magnitude < 0.5) qualityIndex += 1;
-            else qualityIndex += 2;
-            if (qualityIndex > maxIndex) qualityIndex = maxIndex;
-            var newQuality = Type.createEnumIndex(SimulationQuality, qualityIndex);
-            haxe.Log.trace("Average FPS: " + this.performanceMonitor.fpsSample.average + ", lowering quality to: " + Std.string(newQuality), {
-                fileName: "Main.hx",
-                lineNumber: 367,
-                className: "Main",
-                methodName: "lowerQualityRequired"
-            });
-            this.set_simulationQuality(newQuality);
-            this.updateSimulationTextures();
+//            if (this.qualityDirection > 0) return;
+//            this.qualityDirection = -1;
+//            var qualityIndex = this.simulationQuality[1];
+//            var maxIndex = Type.allEnums(SimulationQuality).length - 1;
+//            if (qualityIndex >= maxIndex) return;
+//            if (magnitude < 0.5) qualityIndex += 1;
+//            else qualityIndex += 2;
+//            if (qualityIndex > maxIndex) qualityIndex = maxIndex;
+//            var newQuality = Type.createEnumIndex(SimulationQuality, qualityIndex);
+//            haxe.Log.trace("Average FPS: " + this.performanceMonitor.fpsSample.average + ", lowering quality to: " + Std.string(newQuality), {
+//                fileName: "Main.hx",
+//                lineNumber: 367,
+//                className: "Main",
+//                methodName: "lowerQualityRequired"
+//            });
+//            this.set_simulationQuality(newQuality);
+//            this.updateSimulationTextures();
         },
         higherQualityRequired: function (magnitude) {
-            if (this.qualityDirection < 0) return;
-            this.qualityDirection = 1;
-            var qualityIndex = this.simulationQuality[1];
-            var minIndex = 0;
-            if (qualityIndex <= minIndex) return;
-            if (magnitude < 0.5) qualityIndex -= 1;
-            else qualityIndex -= 2;
-            if (qualityIndex < minIndex) qualityIndex = minIndex;
-            var newQuality = Type.createEnumIndex(SimulationQuality, qualityIndex);
-            haxe.Log.trace("Raising quality to: " + Std.string(newQuality), {
-                fileName: "Main.hx",
-                lineNumber: 387,
-                className: "Main",
-                methodName: "higherQualityRequired"
-            });
-            this.set_simulationQuality(newQuality);
-            this.updateSimulationTextures();
+//            if (this.qualityDirection < 0) return;
+//            this.qualityDirection = 1;
+//            var qualityIndex = this.simulationQuality[1];
+//            var minIndex = 0;
+//            if (qualityIndex <= minIndex) return;
+//            if (magnitude < 0.5) qualityIndex -= 1;
+//            else qualityIndex -= 2;
+//            if (qualityIndex < minIndex) qualityIndex = minIndex;
+//            var newQuality = Type.createEnumIndex(SimulationQuality, qualityIndex);
+//            haxe.Log.trace("Raising quality to: " + Std.string(newQuality), {
+//                fileName: "Main.hx",
+//                lineNumber: 387,
+//                className: "Main",
+//                methodName: "higherQualityRequired"
+//            });
+//            this.set_simulationQuality(newQuality);
+//            this.updateSimulationTextures();
         },
         reset: function () {
             this.particles.reset();
