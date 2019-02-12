@@ -1,0 +1,4 @@
+[ ] Some sort of instructions that fade on and off depending if the idle timer has tripped
+[ ] Way to change the particles color?
+[ ] Change viscocity of particles
+[ ] Mutiple mouse / Wii remotes
