@@ -1,3 +1,12 @@
+/*
+
+TODO: 
+
+When the animation ends:
+    1) User interupted: Fades, then after animation it deletes div.
+    2) Animation just stays on screen, when interupted, fades then gets deleted
+
+*/
 function rightClick() {
     ERIC_INSTANCE.reset();
 }
@@ -28,6 +37,8 @@ $(document).ready(function () {
 
     var playing = false;
 
+    var oldVaraDiv = "";
+    
     function startAnimation() {
         if (!playing) {
 
@@ -117,6 +128,7 @@ $(document).ready(function () {
             console.log("Animation End " + i);
             if (i.startsWith("t5")) {
                 var toRemove = i.substring(2);
+                oldVaraDiv = toRemove;
                 console.log("Removed: " + toRemove);
                 $(toRemove).remove();
 
