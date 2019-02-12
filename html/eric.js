@@ -1,12 +1,4 @@
-/*
 
-TODO: 
-
-When the animation ends:
-    1) User interupted: Fades, then after animation it deletes div.
-    2) Animation just stays on screen, when interupted, fades then gets deleted
-
-*/
 function rightClick() {
     ERIC_INSTANCE.reset();
 }
@@ -36,28 +28,11 @@ $(document).ready(function () {
     });
 
     var playing = false;
-
-    var oldVaraDiv = "";
     
     function startAnimation() {
         if (!playing) {
-
-            //            for (var i = 1; i < 6; i++) {
-            //                var textObj = vara.get("t" + i);
-            //                console.log("Got text object: " + JSON.stringify(textObj))
-            //                //textObj.container.style.transition = "opacity 1s 1s";
-            //                textObj.container.style.opacity = 1;
-            //            }
-
-//            if (vara != null) {
-//                for (var i = 1; i < 6; i++) {
-//                    var textObj = vara.get("t" + i);
-//                    console.log("Got text object: " + JSON.stringify(textObj))
-//                    textObj.container.style.transition = "opacity 1s 1s";
-//                    textObj.container.style.opacity = 0;
-//                }
-//            }
             var randomInt = getRandomInt(1000000);
+            $('div.vara-container').remove();
             $('#container').append('<div class="vara-container" id="v' + randomInt + '"></div>');
             createVara(randomInt);
 
@@ -84,7 +59,7 @@ $(document).ready(function () {
 
 
     function createVara(cont) {
-
+        
         vara = new Vara("#v" + cont, "PacificoSLO.json", [{
                 text: "Hello!",
                 y: 50,
@@ -102,10 +77,6 @@ $(document).ready(function () {
             {
                 text: "The A button resets your drawing.",
                 id: "t4"
-        },
-            {
-                text: "(Move remote to dismiss)",
-                id: "t5" + "#v" + cont
         }
         ], {
             fontSize: 70,
@@ -126,13 +97,6 @@ $(document).ready(function () {
 
         vara.animationEnd(function (i, o) {
             console.log("Animation End " + i);
-            if (i.startsWith("t5")) {
-                var toRemove = i.substring(2);
-                oldVaraDiv = toRemove;
-                console.log("Removed: " + toRemove);
-                $(toRemove).remove();
-
-            }
         });
 
     }
