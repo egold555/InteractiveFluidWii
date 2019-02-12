@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     function createVara(cont) {
         
-        vara = new Vara("#v" + cont, "PacificoSLO.json", [{
+        vara = new Vara("#v" + cont, "css/font/PacificoSLO.json", [{
                 text: "Hello!",
                 y: 50,
                 duration: 1000,
