@@ -7,10 +7,24 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+function presentersView(){
+    ERIC_STATS.dom.style.visibility = 'hidden';
+    dat.GUI.toggleHide();
+}
+
+function debugView(){
+    ERIC_STATS.dom.style.visibility = 'visible';
+    dat.GUI.toggleHide();
+}
+
 var vara;
 
 $(document).ready(function () {
 
+    ERIC_STATS = new Stats();
+    ERIC_STATS.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+    document.body.appendChild( ERIC_STATS.dom );
+    
     // idleTimer() takes an optional argument that defines the idle timeout
     // timeout is in milliseconds; defaults to 30000
     $.idleTimer(10000);

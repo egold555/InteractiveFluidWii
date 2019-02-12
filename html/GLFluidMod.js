@@ -1,3 +1,5 @@
+var ERIC_STATS;
+
 (function ($hx_exports) {
     "use strict";
     $hx_exports.lime = $hx_exports.lime || {};
@@ -1218,9 +1220,11 @@
         render: function (context) {},
         update: function (deltaTime) {},
         __triggerFrame: function (_) {
+            if(ERIC_STATS != null){ERIC_STATS.begin();}
             lime.app.Application.__eventInfo.deltaTime = 16;
             lime.app.Application.__dispatch();
             lime.graphics.Renderer.dispatch();
+            if(ERIC_STATS != null){ERIC_STATS.end();}
             window.requestAnimationFrame($bind(this, this.__triggerFrame));
         },
         get_window: function () {
@@ -1336,10 +1340,10 @@
                     
                     var hidePermGui = gui.add({
                         f: function () {
-                            dat.GUI.toggleHide();
-                            console.log("SHOW dat.gui: dat.GUI.toggleHide()");
+                            presentersView();
+                            console.log("SHOW: debugView()");
                         }
-                    }, "f").name("Hide Perm");
+                    }, "f").name("Hide");
                     hidePermGui.__li.className = "cr link footer";
 
                     break;
