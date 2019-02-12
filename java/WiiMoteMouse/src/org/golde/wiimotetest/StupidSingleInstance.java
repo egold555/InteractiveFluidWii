@@ -45,6 +45,8 @@ public class StupidSingleInstance implements WiimoteListener {
 			wiimote.activateIRTRacking();
 			wiimote.activateMotionSensing();
 			wiimote.addWiiMoteEventListeners(this);
+			//wiimote.setSensorBarBelowScreen();
+			wiimote.setSensorBarAboveScreen();
 			wiimote.setLeds(true, active, active, true);
 		} catch (WiiusejNativeLibraryLoadingException e) {
 			// TODO Auto-generated catch block

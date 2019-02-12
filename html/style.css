@@ -1,0 +1,101 @@
+/*Control panel styles*/
+
+/* green left border for selects */
+
+.dg .cr.object {
+    border-left: 3px solid #5CB36D;
+}
+
+/* disabled row style */
+
+.dg .cr.disabled {
+    border-left-color: #353535 !important;
+}
+
+.dg .cr input[disabled] {
+    background: none !important;
+    color: #8C8C8C !important;
+}
+
+/* new row type: link */
+
+.dg .cr.link,
+.dg .cr.link .property-name,
+.dg .cr.link * {
+    cursor: pointer;
+}
+
+.dg .cr.link:hover {
+    background: #111;
+}
+
+.dg .cr.footer,
+.dg .cr.footer .property-name,
+.dg .cr.footer * {
+    font-size: 110%;
+}
+
+/* new row type: footer */
+
+.dg .cr.footer {
+    color: #939699;
+    transition: color 0.2s;
+}
+
+.dg .cr.footer:hover {
+    color: #2FA1D6;
+    transition: color 0.2s;
+}
+
+/* row icon */
+
+.dg .cr [class^="icon-"],
+[class*=" icon-"] {
+    font-size: 150%;
+    float: right;
+    text-align: center;
+    width: 27px;
+}
+
+/*Body Layout*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#content,
+.vara-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: url("cursor.png"), auto;
+}
+
+.vara-container {
+    z-index: 10;
+    pointer-events: none;
+    /*Allow click events to div below*/
+}
+
+#content {
+    background: #000000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}

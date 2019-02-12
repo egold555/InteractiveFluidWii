@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     // idleTimer() takes an optional argument that defines the idle timeout
     // timeout is in milliseconds; defaults to 30000
-    $.idleTimer(5000);
+    $.idleTimer(10000);
 
 
     $(document).bind("idle.idleTimer", function () {
@@ -71,7 +71,7 @@ $(document).ready(function () {
                 id: "t2"
         },
             {
-                text: "Hold down the back button to draw.",
+                text: "Hold down the rear button to draw.",
                 id: "t3"
         },
             {
