@@ -2,4 +2,4 @@
 [ ] Way to change the particles color?
 [ ] Change viscocity of particles
 [ ] Mutiple mouse / Wii remotes
-[ ] Spotify Playlist that goes with art
+[X] Spotify Playlist that goes with art: https://open.spotify.com/user/eric_golde/playlist/2VpihH2kvMdYyymoPpL6qo?si=YZtIy5aCRn2v6IN8IR1MMQ
